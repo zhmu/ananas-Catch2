@@ -17,10 +17,10 @@ namespace Catch {
 
     std::uint32_t generateRandomSeed( GenerateFrom from ) {
         switch ( from ) {
+        case GenerateFrom::Default:
         case GenerateFrom::Time:
             return static_cast<std::uint32_t>( std::time( nullptr ) );
 
-        case GenerateFrom::Default:
         case GenerateFrom::RandomDevice:
             // In theory, a platform could have random_device that returns just
             // 16 bits. That is still some randomness, so we don't care too much
